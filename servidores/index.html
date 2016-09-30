@@ -13,17 +13,22 @@
 	</head>	
 
 	<body>
-
+		<!--Lugar donde se pondrán los chat y que por el css es de 200px-->
 		<div id="chat"></div>
 
+		<!-- Formulario del texto y el input boton del tipo submit-->
 		<form id="send-message">
 			<input type="text" id="message"></input>
 			<input type="submit"></input>
 		</form>
 
+		<!-- Se usa libreria JQuery ultima version y socket io-->
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 
+		<!-- Se crea un script que contiene variable del socket, del form del mensaje (messageform) que es igual al form del mensaje por id y del mensaje que se esta creando: messagebox que debe ser igual a la del mensaje a enviar por id (message) e igual con lo del chat identificado por su id-->
+		<!-- 2) En la primera funcion es que cuando haya submit en el form del mensaje entonces emitira los mensajes enviados en ese momento a traves del socket y luego deja vacio el cuadro del mensaje-->
+		<!-- 4) En la segunda funcion se recibe lo que el servidor envia con el nombre dado en el servidor 'new message y ademas se pondra el 'data' enviado por el servidor en el chat -->
 		<script>
 
 			$(function() {
